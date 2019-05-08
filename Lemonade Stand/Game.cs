@@ -11,15 +11,27 @@ namespace Lemonade_Stand
         public int numberOfPlayers;
         public int result;
         public int numberOfDays;
-        //public int days;
-        Day days;
+        Inventory inventory;
+        Store store;
+        //Customer customer;
+        Day day;
+        Weather weather;
+        UserInterface user;
+
 
 
 
         //constructor
         public Game()
         {
-            days = new Day();
+            player1 = new Player();
+            inventory = new Inventory();
+            //store = new Store();
+            //customer = new Customer();
+            day = new Day();
+            weather = new Weather();
+            user = new UserInterface();
+
         }
 
         //member methods (Can do)
@@ -28,7 +40,7 @@ namespace Lemonade_Stand
             GameStart();
             GameRules();
             GameMenu();
-            //GameMenuCont();
+            GameMenuCont();
             StoreRun();
             PlayerSetup();
             Inventory();
@@ -57,7 +69,7 @@ namespace Lemonade_Stand
             Console.Clear();
         }
 
-        public void GameMenu()
+        public int GameMenu()
         {
             Console.WriteLine("Choose number of days to play (7, 14, 30).");
             int numberOfDays = int.Parse(Console.ReadLine());
@@ -84,18 +96,24 @@ namespace Lemonade_Stand
                 Console.ReadLine();
                 Console.Clear();
             }
-            return;
+            return numberOfDays;
         }
-        //public void GameMenuCont()
-        //{
-        //    //set the values for assets here or in another method?
-        //    Console.WriteLine("Your assets are: $20, 5 lemons, 5 cups of sugar and 10 ice cubes.");
-        //    Console.ReadLine();
-        //    Console.Clear();
-        //}
+        public void GameMenuCont()
+        {
+            //set the values for assets here or in another method?
+            //annotate the $20 starting money in the rules so this method can be deleted. Or just leave it out entirely and still delete this method??
+            Console.WriteLine("Your assets are: $20, 5 lemons, 5 cups of sugar and 10 ice cubes.");
+            Console.ReadLine();
+            Console.Clear();
+        }
 
         public void StoreRun()
         {
+            Store store;
+
+            store.RunStore(); 
+            Console.WriteLine();
+            //string store = Console.ReadLine();
 
         }
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lemonade_Stand
 {
-    class Inventory
+    public class Inventory
     {
         //member variables (Has a)
         public int totalLemons;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lemonade_Stand
 {
-    class UserInterface
+    static class UserInterface
     {
         //member variables (Has a)
 

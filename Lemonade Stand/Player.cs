@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lemonade_Stand
 {
-    class Player
+    public class Player
     {
         //member variables (Has a)
         public int numbers;

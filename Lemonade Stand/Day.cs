@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lemonade_Stand
 {
-    class Day
+    public class Day
     {
         //member variables (Has a)
 

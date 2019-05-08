@@ -4,10 +4,11 @@ using System.Text;
 
 namespace Lemonade_Stand
 {
-    class Weather
+    public class Weather
     {
         //member variables (Has a)
         Random random;
+        public string randomWeather;
         int min;
         int max;
 
@@ -15,19 +16,24 @@ namespace Lemonade_Stand
         //constructor
         public Weather()
         {
-
+            Random random = new Random();
         }
 
         //member methods (Can do)
         public void GameWeather()
         {
             WeatherForecast();
-
+            ActualWeather();
+            WeeklyWeatherForecast();
         }
         public void WeatherForecast()
         {
-            RandomNumber();
-            Console.WriteLine("Today's weather forecast is" + random);
+            //randomWeather = RandomWeather();
+            Console.WriteLine("Today's weather forecast is" + randomWeather);
+            switch(randomWeather)
+            {
+
+            }
             Console.ReadLine();
             Console.Clear();
         }
@@ -36,6 +42,13 @@ namespace Lemonade_Stand
         {
 
         }
+
+        //public string RandomWeather()
+        //{
+        //    Console.WriteLine();
+        //    Random random = new Random();
+            
+        //}
 
         public int RandomNumber()
         {
