@@ -8,11 +8,14 @@ namespace Lemonade_Stand
     {
         //member variables (Has a)
         public int numbers;
+        Inventory inventory;
+
+
 
         //constructor
         public Player()
         {
-
+            inventory = new Inventory();
         }
 
         //member methods (Can do)
@@ -38,7 +41,7 @@ namespace Lemonade_Stand
             //determine how much of each ingredient will be used in the batch for the day
             //subtract ingredients used from the total ingredients in the inventory
             int[] numbers = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            Console.WriteLine("Decide what your lemonade recipe for today will be (how many lemons, cups of sugar and ice cubes? 1-10)");
+            Console.WriteLine("Decide what your lemonade recipe for today will be (how many lemons, cups of sugar and ice cubes? 1-15)");
             Console.ReadLine();
         }
 

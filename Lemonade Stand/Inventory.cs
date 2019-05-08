@@ -7,33 +7,20 @@ namespace Lemonade_Stand
     class Inventory
     {
         //member variables (Has a)
-
+        public int totalLemons;
+        public int totalSugar;
+        public int totalIceCubes;
+        public int totalMoney;
 
         //constructor
         public Inventory()
         {
-
+            totalLemons = 0;
+            totalSugar = 0;
+            totalIceCubes = 0;
+            totalMoney = 20;
         }
         
         //member methods (Can do)
-        public void LemonsLeft()
-        {
-            Console.WriteLine("");
-        }
-
-        public void SugarLeft()
-        {
-
-        }
-
-        public void IceLeft()
-        {
-
-        }
-
-        public void AssetsLeft()
-        {
-
-        }
     }
 }
