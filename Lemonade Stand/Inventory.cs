@@ -10,7 +10,9 @@ namespace Lemonade_Stand
         public int totalLemons;
         public int totalSugar;
         public int totalIceCubes;
-        public int totalMoney;
+        public double totalMoney;
+        public int totalCups;
+        //public double wallet;
 
         //constructor
         public Inventory()
@@ -18,9 +20,14 @@ namespace Lemonade_Stand
             totalLemons = 0;
             totalSugar = 0;
             totalIceCubes = 0;
-            totalMoney = 20;
+            totalCups = 0;
+            totalMoney = 20.00;
         }
-        
+
         //member methods (Can do)
+        public void DisplayInventory()
+        {
+
+        }
     }
 }

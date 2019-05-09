@@ -7,12 +7,12 @@ namespace Lemonade_Stand
     public class Day
     {
         //member variables (Has a)
-
+        public Weather weather;
 
         //constructor
         public Day()
         {
-
+            weather = new Weather();
         }
 
         //member methods (Can do)

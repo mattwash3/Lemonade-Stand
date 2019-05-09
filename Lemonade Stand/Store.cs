@@ -33,6 +33,8 @@ namespace Lemonade_Stand
         public int totalSugar;
         public int totalIce;
         public int totalCups;
+        public double totalMoney;
+        public double money;
         Random random;
 
         //constructor
@@ -58,6 +60,7 @@ namespace Lemonade_Stand
             totalSugar = 0;
             totalIce = 0;
             totalCups = 0;
+            totalMoney = 20.00;
             Random random = new Random();
         }
 
@@ -68,6 +71,7 @@ namespace Lemonade_Stand
             BuySugar();
             BuyIce();
             BuyCups();
+            Restock();
         }
 
         public double RandomNumberSwitch()
@@ -75,6 +79,20 @@ namespace Lemonade_Stand
             double number;
             number = random.Next(1, 3);
             return number;
+        }
+        public void Restock()
+        {
+            money = totalMoney -= (totalCostLemons + totalCostSugar + totalCostIce + totalCostCups);
+            Console.WriteLine("Remaining money is " + money);
+            Console.ReadLine();
+            Console.WriteLine("Lemons:" + totalLemons);
+            Console.ReadLine();
+            Console.WriteLine("Sugar:" + totalSugar);
+            Console.ReadLine();
+            Console.WriteLine("Ice Cubes:" + totalIce);
+            Console.ReadLine();
+            Console.WriteLine("Cups:" + totalCups);
+            Console.ReadLine();
         }
 
         public void BuyLemons()

@@ -11,44 +11,70 @@ namespace Lemonade_Stand
         public string randomWeather;
         int min;
         int max;
-
+        public string conditions;
+        public string motherNature;
+        public string daily;
+        public string forecast;
+        public int temperature;
+        public string number;
+        public string condition;
 
         //constructor
         public Weather()
         {
-            Random random = new Random();
+            random = new Random();
         }
 
         //member methods (Can do)
         public void GameWeather()
         {
-            WeatherForecast();
-            ActualWeather();
+            //WeatherForecast();
+            //ActualWeather();
             WeeklyWeatherForecast();
         }
         public void WeatherForecast()
         {
-            //randomWeather = RandomWeather();
-            Console.WriteLine("Today's weather forecast is" + randomWeather);
-            switch(randomWeather)
+            int conditions = RandomWeather();
+            //Console.WriteLine("Today's weather forecast is" + conditions);
+            //string forecast = Console.ReadLine();
+            switch(conditions)
             {
-
+                case 1:
+                    Console.WriteLine("Weather condition: Hazy");
+                    condition = "hazy";
+                    break;
+                case 2:
+                    Console.WriteLine("Weather condition: Rainy");
+                    condition = "rainy";
+                    break;
+                case 3:
+                    Console.WriteLine("Weather condition: Sunny");
+                    condition = "sunny";
+                    break;
+                case 4:
+                    Console.WriteLine("Weather condition: Overcast");
+                    condition = "overcast";
+                    break;
+                case 5:
+                    Console.WriteLine("Weather condition: Humid");
+                    condition = "humid";
+                    break;
             }
-            Console.ReadLine();
-            Console.Clear();
+            
+        }
+
+        public int RandomWeather()
+        {
+            int number;
+            number = random.Next(1, 5);
+            return number;
         }
 
         public void ActualWeather()
         {
-
+            RandomNumber();
+            Console.WriteLine();
         }
-
-        //public string RandomWeather()
-        //{
-        //    Console.WriteLine();
-        //    Random random = new Random();
-            
-        //}
 
         public int RandomNumber()
         {
@@ -61,21 +87,12 @@ namespace Lemonade_Stand
 
         public void WeeklyWeatherForecast()
         {
-            RandomNumber();
-            Console.WriteLine("Monday weather forecast is" + random);
-            Console.ReadLine();
-            Console.WriteLine("Teusday weather forecast is" + random);
-            Console.ReadLine();
-            Console.WriteLine("Wednesday weather forecast is" + random);
-            Console.ReadLine();
-            Console.WriteLine("Thursday weather forecast is" + random);
-            Console.ReadLine();
-            Console.WriteLine("Friday weather forecast is" + random);
-            Console.ReadLine();
-            Console.WriteLine("Saturday weather forecast is" + random);
-            Console.ReadLine();
-            Console.WriteLine("Sunday weather forecast is" + random);
-            Console.ReadLine();
+            WeatherForecast();
+            ActualWeather();
+            forecast = condition;
+            temperature = RandomNumber();
+            daily = forecast + temperature;
+            Console.WriteLine("Today's weather forecast is" + daily);
             Console.Clear();
         }
 

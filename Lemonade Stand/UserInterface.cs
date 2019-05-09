@@ -10,7 +10,7 @@ namespace Lemonade_Stand
 
 
         //constructor
-        public UserInterface()
+        static UserInterface()
         {
 
         }

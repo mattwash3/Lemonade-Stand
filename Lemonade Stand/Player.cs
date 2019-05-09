@@ -9,7 +9,7 @@ namespace Lemonade_Stand
         //member variables (Has a)
         public int numbers;
         Inventory inventory;
-
+        public int number;
 
 
         //constructor
@@ -19,12 +19,10 @@ namespace Lemonade_Stand
         }
 
         //member methods (Can do)
-        public void SetupPlayer()
-        {
 
-        }
 
-       public void LemonadeBatch()
+
+            public void LemonadeBatch()
         {
             //determine how much it costs to make each cup
             //determine how many cups you want to make

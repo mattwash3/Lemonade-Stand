@@ -8,15 +8,24 @@ namespace Lemonade_Stand
     {
         //member variables (Has a)
         Player player1;
+        Player player2;
         public int numberOfPlayers;
         public int result;
         public int numberOfDays;
-        Inventory inventory;
-        Store store;
-        //Customer customer;
-        Day day;
+        public Inventory inventory;
+        public Store store;
         Weather weather;
-        UserInterface user;
+        //public Customer customer;
+
+        //////////////////////
+        public List<Day> days;
+        //public Day day;
+        //public Weather weather;
+        //////////////////////
+        
+        //UserInterface user;
+        public string restock;
+        public string stock;
 
 
 
@@ -25,12 +34,18 @@ namespace Lemonade_Stand
         public Game()
         {
             player1 = new Player();
+            player2 = new Player();
             inventory = new Inventory();
-            //store = new Store();
+            store = new Store();
             //customer = new Customer();
-            day = new Day();
+
+            //////////////////////
+            days = new List<Day>();
+            // day = new Day();
             weather = new Weather();
-            user = new UserInterface();
+            //////////////////////
+
+            //user = new UserInterface();
 
         }
 
@@ -42,10 +57,9 @@ namespace Lemonade_Stand
             GameMenu();
             GameMenuCont();
             StoreRun();
-            PlayerSetup();
             Inventory();
-            CustomerSetup();
             DaySetup();
+            CustomerSetup();
             WeatherSetup();
             UserInterface();
         }
@@ -78,21 +92,21 @@ namespace Lemonade_Stand
             if (numberOfDays == 7)
             {
                 Day days = new Day();
-                Console.WriteLine("You chose play for 7 days");
+                Console.WriteLine("You chose: play for 7 days");
                 Console.ReadLine();
                 Console.Clear();
             }
             else if(numberOfDays == 14)
             {
                 Day days = new Day();
-                Console.WriteLine("You chose play for 14 days");
+                Console.WriteLine("You chose: play for 14 days");
                 Console.ReadLine();
                 Console.Clear();
             }
             else if (numberOfDays == 30)
             {
                 Day days = new Day();
-                Console.WriteLine("You chose play for 30 days");
+                Console.WriteLine("You chose: play for 30 days");
                 Console.ReadLine();
                 Console.Clear();
             }
@@ -100,36 +114,49 @@ namespace Lemonade_Stand
         }
         public void GameMenuCont()
         {
-            //set the values for assets here or in another method?
             //annotate the $20 starting money in the rules so this method can be deleted. Or just leave it out entirely and still delete this method??
-            Console.WriteLine("Your assets are: $20, 5 lemons, 5 cups of sugar and 10 ice cubes.");
+            PlayerSetup();
+            Console.WriteLine("Your mom has given you $20 to start your lemonade stand. At the end of the day she lets you use the freezer to store your ice in so it doesn't melt.");
             Console.ReadLine();
             Console.Clear();
         }
 
         public void StoreRun()
         {
-            Store store;
-
             store.RunStore(); 
             Console.WriteLine();
-            //string store = Console.ReadLine();
-
-        }
-
-        public void PlayerSetup()
-        {
+            string restock = Console.ReadLine();
 
         }
 
         public void Inventory()
         {
-
+            inventory.DisplayInventory();
+            Console.WriteLine();
+            string stock = Console.ReadLine();
         }
 
-        public void CustomerSetup()
+        public void PlayerSetup()
         {
-
+                Console.WriteLine("How many players? 1 or 2");
+                int numberOfPlayers = int.Parse(Console.ReadLine());
+                int result = numberOfPlayers;
+                int[] number = { 1, 2 };
+                if (numberOfPlayers == 1)
+                {
+                    player1 = new Player();
+                    Console.WriteLine("Player 1");
+                    //player2 = new Computer();
+                    //Console.Clear();
+                }
+                else if (numberOfPlayers == 2)
+                {
+                    player1 = new Player();
+                    Console.WriteLine("Player 1");
+                    player2 = new Player();
+                    Console.WriteLine("Player 2");
+                    Console.Clear();
+                }
         }
 
         public void DaySetup()
@@ -138,6 +165,13 @@ namespace Lemonade_Stand
         }
 
         public void WeatherSetup()
+        {
+            weather.GameWeather();
+            Console.WriteLine();
+            string forecast = Console.ReadLine();
+        }
+
+        public void CustomerSetup()
         {
 
         }
