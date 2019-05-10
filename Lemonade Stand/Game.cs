@@ -7,19 +7,19 @@ namespace Lemonade_Stand
     public class Game
     {
         //member variables (Has a)
-        Player player1;
-        Player player2;
+        public Player player1;
+        public Player player2;
         public int numberOfPlayers;
         public int result;
         public int numberOfDays;
-        public Inventory inventory;
         public Store store;
-        Weather weather;
+        public Weather weather;
+        public string forecast;
         //public Customer customer;
 
         //////////////////////
         public List<Day> days;
-        //public Day day;
+        public Day day;
         //public Weather weather;
         //////////////////////
         
@@ -35,8 +35,8 @@ namespace Lemonade_Stand
         {
             player1 = new Player();
             player2 = new Player();
-            inventory = new Inventory();
             store = new Store();
+            day = new Day();
             //customer = new Customer();
 
             //////////////////////
@@ -59,8 +59,8 @@ namespace Lemonade_Stand
             StoreRun();
             Inventory();
             DaySetup();
-            CustomerSetup();
-            WeatherSetup();
+            //CustomerSetup();
+            //WeatherSetup();
             UserInterface();
         }
 
@@ -91,21 +91,21 @@ namespace Lemonade_Stand
             //int[] numbers = { 7, 14, 30 };
             if (numberOfDays == 7)
             {
-                Day days = new Day();
+                day = new Day();
                 Console.WriteLine("You chose: play for 7 days");
                 Console.ReadLine();
                 Console.Clear();
             }
             else if(numberOfDays == 14)
             {
-                Day days = new Day();
+                day = new Day();
                 Console.WriteLine("You chose: play for 14 days");
                 Console.ReadLine();
                 Console.Clear();
             }
             else if (numberOfDays == 30)
             {
-                Day days = new Day();
+                day = new Day();
                 Console.WriteLine("You chose: play for 30 days");
                 Console.ReadLine();
                 Console.Clear();
@@ -123,7 +123,8 @@ namespace Lemonade_Stand
 
         public void StoreRun()
         {
-            store.RunStore(); 
+            
+            store.RunStore(player1.inventory); 
             Console.WriteLine();
             string restock = Console.ReadLine();
 
@@ -131,9 +132,10 @@ namespace Lemonade_Stand
 
         public void Inventory()
         {
-            inventory.DisplayInventory();
+            player1.inventory.DisplayInventory();
+            //splayer2.inventory.DisplayInventory();
             Console.WriteLine();
-            string stock = Console.ReadLine();
+            Console.ReadLine();
         }
 
         public void PlayerSetup()
@@ -147,28 +149,32 @@ namespace Lemonade_Stand
                     player1 = new Player();
                     Console.WriteLine("Player 1");
                     //player2 = new Computer();
-                    //Console.Clear();
+                    Console.Clear();
                 }
                 else if (numberOfPlayers == 2)
                 {
                     player1 = new Player();
                     Console.WriteLine("Player 1");
+                    Console.ReadLine();
                     player2 = new Player();
                     Console.WriteLine("Player 2");
+                    Console.ReadLine();
                     Console.Clear();
                 }
         }
 
         public void DaySetup()
         {
-
+            day.GetDay(player1.inventory);
+            Console.WriteLine();
+            Console.ReadLine();
         }
 
         public void WeatherSetup()
         {
             weather.GameWeather();
             Console.WriteLine();
-            string forecast = Console.ReadLine();
+            forecast = Console.ReadLine();
         }
 
         public void CustomerSetup()

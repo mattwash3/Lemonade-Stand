@@ -8,7 +8,7 @@ namespace Lemonade_Stand
     {
         //member variables (Has a)
         public int numbers;
-        Inventory inventory;
+        public Inventory inventory;
         public int number;
 
 

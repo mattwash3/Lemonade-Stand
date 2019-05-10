@@ -11,11 +11,6 @@ namespace Lemonade_Stand
         public double totalCostSugar;
         public double totalCostIce;
         public double totalCostCups;
-        public double lemons;
-        public double sugar;
-        public double iceCubes;
-        public double cups;
-        public double number;
         public double tenLemons;
         public double thirtyLemons;
         public double sixtyLemons;
@@ -29,13 +24,8 @@ namespace Lemonade_Stand
         public double fiftyCups;
         public double oneHundredCups;
         public string numbers;
-        public int totalLemons;
-        public int totalSugar;
-        public int totalIce;
-        public int totalCups;
         public double totalMoney;
-        public double money;
-        Random random;
+        public Random random;
 
         //constructor
         public Store()
@@ -56,22 +46,15 @@ namespace Lemonade_Stand
             totalCostSugar = 0;
             totalCostIce = 0;
             totalCostCups = 0;
-            totalLemons = 0;
-            totalSugar = 0;
-            totalIce = 0;
-            totalCups = 0;
             totalMoney = 20.00;
-            Random random = new Random();
+            random = new Random();
+            
         }
 
         //member methods (Can do)
-        public void RunStore()
+        public void RunStore(Inventory inventory)
         {
-            BuyLemons();
-            BuySugar();
-            BuyIce();
-            BuyCups();
-            Restock();
+            Restock(inventory);
         }
 
         public double RandomNumberSwitch()
@@ -80,123 +63,135 @@ namespace Lemonade_Stand
             number = random.Next(1, 3);
             return number;
         }
-        public void Restock()
+        public void Restock(Inventory inventory)
         {
-            money = totalMoney -= (totalCostLemons + totalCostSugar + totalCostIce + totalCostCups);
-            Console.WriteLine("Remaining money is " + money);
+            BuyLemons(inventory);
+            BuySugar(inventory);
+            BuyIce(inventory);
+            BuyCups(inventory);
+            Wallet(inventory);
+            Console.WriteLine("Remaining money is " + inventory.totalMoney);
             Console.ReadLine();
-            Console.WriteLine("Lemons:" + totalLemons);
+            Console.WriteLine("Lemons:" + inventory.totalLemons);
             Console.ReadLine();
-            Console.WriteLine("Sugar:" + totalSugar);
+            Console.WriteLine("Sugar:" + inventory.totalSugar);
             Console.ReadLine();
-            Console.WriteLine("Ice Cubes:" + totalIce);
+            Console.WriteLine("Ice Cubes:" + inventory.totalIce);
             Console.ReadLine();
-            Console.WriteLine("Cups:" + totalCups);
+            Console.WriteLine("Cups:" + inventory.totalCups);
             Console.ReadLine();
         }
 
-        public void BuyLemons()
+        public void BuyLemons(Inventory inventory)
         {       
             Console.WriteLine("How many lemons do you want to buy? 10 lemons for $.55, 30 lemons for $1.75, 60 lemons for $3.99");
-            string numbers = Console.ReadLine();
-            switch (numbers)
+            string number = Console.ReadLine();
+            switch (number)
             {
                 case "10":
                     Console.WriteLine("10 Lemons");
                     totalCostLemons += tenLemons;
-                    totalLemons += 10;
+                    inventory.totalLemons += 10;
+                    //totalLemons += 10;
                     break;
                 case "30":
                     Console.WriteLine("30 lemons");
                     totalCostLemons += thirtyLemons;
-                    totalLemons += 30;
+                    inventory.totalLemons += 30;
                     break;
                 case "60":
                     Console.WriteLine("60 lemons");
                     totalCostLemons += sixtyLemons;
-                    totalLemons += 60;
+                    inventory.totalLemons += 60;
                     break;
                 default:
                     break;
             }
         }
 
-        public void BuySugar()
+        public void BuySugar(Inventory inventory)
         {
             Console.WriteLine("How many cups of sugar do you want to buy? 10 cups of sugar for $.50, 20 cups of sugar for $1.50, 50 cups of sugar for $3.45");
-            string numbers = Console.ReadLine();
-            switch (numbers)
+            string number = Console.ReadLine();
+            switch (number)
             {
                 case "10":
                     Console.WriteLine("10 cups of sugar");
                     totalCostSugar += tenCupsSugar;
-                    totalSugar += 10;
+                    inventory.totalSugar += 10;
                     break;
                 case "20":
                     Console.WriteLine("20 cups of sugar");
                     totalCostSugar += twentyCupsSugar;
-                    totalSugar += 20;
+                    inventory.totalSugar += 20;
                     break;
                 case "50":
                     Console.WriteLine("50 cups of sugar");
                     totalCostSugar += fiftyCupsSugar;
-                    totalSugar += 50;
+                    inventory.totalSugar += 50;
                     break;
                 default:
                     break;
             }
         }
 
-        public void BuyIce()
+        public void BuyIce(Inventory inventory)
         {
             Console.WriteLine("How many ice cubes do you want to buy? 50 ice cubes for $0.45, 125 ice cubes for $1.10, 200 ice cubes for $1.99");
-            string numbers = Console.ReadLine();
-            switch (numbers)
+            string number = Console.ReadLine();
+            switch (number)
             {
                 case "50":
                    Console.WriteLine("50 ice cubes");
                    totalCostIce += fiftyIceCubes;
-                   totalIce += 50;
+                   inventory.totalIce += 50;
                    break;
                 case "125":
                    Console.WriteLine("125 ice cubes");
                    totalCostIce += oneHundredTwentyFiveIceCubes;
-                   totalIce += 125;
+                   inventory.totalIce += 125;
                    break;
                 case "200":
                    Console.WriteLine("200 ice cubes");
                    totalCostIce += twoHundredIceCubes;
-                   totalIce += 200;
+                   inventory.totalIce += 200;
                    break;
                 default:
                     break;
             }
         }
 
-        public void BuyCups()
+        public void BuyCups(Inventory inventory)
         {
             Console.WriteLine("How many cups do you want to buy? 25 cups for $0.75, 50 cups for $1.25, 100 cups for $2.50");
-            string numbers = Console.ReadLine();
-            switch (numbers)
+            string number = Console.ReadLine();
+            switch (number)
             {
                 case "25":
                     Console.WriteLine("25 cups");
                     totalCostCups += twentyFiveCups;
-                    totalCups += 25;
+                    inventory.totalCups += 25;
                     break;
                 case "50":
                     Console.WriteLine("50 cups");
                     totalCostCups += fiftyCups;
-                    totalCups += 50;
+                    inventory.totalCups += 50;
                     break;
                 case "100":
                     Console.WriteLine("100 cups");
                     totalCostCups += oneHundredCups;
-                    totalCups += 100;
+                    inventory.totalCups += 100;
                     break;
                 default:
                     break;
             }
         }
+
+        public void Wallet(Inventory inventory)
+        {
+            inventory.totalMoney -= (totalCostLemons + totalCostSugar + totalCostIce + totalCostCups);
+            Console.WriteLine(inventory.totalMoney); 
+        }
+
     }
 }

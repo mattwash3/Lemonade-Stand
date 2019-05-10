@@ -7,7 +7,7 @@ namespace Lemonade_Stand
     public class Weather
     {
         //member variables (Has a)
-        Random random;
+        public Random random;
         public string randomWeather;
         int min;
         int max;
@@ -18,6 +18,7 @@ namespace Lemonade_Stand
         public int temperature;
         public string number;
         public string condition;
+        public int real;
 
         //constructor
         public Weather()
@@ -28,36 +29,34 @@ namespace Lemonade_Stand
         //member methods (Can do)
         public void GameWeather()
         {
-            //WeatherForecast();
-            //ActualWeather();
             WeeklyWeatherForecast();
         }
         public void WeatherForecast()
         {
             int conditions = RandomWeather();
-            //Console.WriteLine("Today's weather forecast is" + conditions);
-            //string forecast = Console.ReadLine();
+            //Console.WriteLine(conditions);
+            string forecast = Console.ReadLine();
             switch(conditions)
             {
                 case 1:
-                    Console.WriteLine("Weather condition: Hazy");
-                    condition = "hazy";
+                    //Console.WriteLine("Weather condition: Hazy");
+                    condition = "Hazy";
                     break;
                 case 2:
-                    Console.WriteLine("Weather condition: Rainy");
-                    condition = "rainy";
+                    //Console.WriteLine("Weather condition: Rainy");
+                    condition = "Rainy";
                     break;
                 case 3:
-                    Console.WriteLine("Weather condition: Sunny");
-                    condition = "sunny";
+                    //Console.WriteLine("Weather condition: Sunny");
+                    condition = "Sunny";
                     break;
                 case 4:
-                    Console.WriteLine("Weather condition: Overcast");
-                    condition = "overcast";
+                    //Console.WriteLine("Weather condition: Overcast");
+                    condition = "Overcast";
                     break;
                 case 5:
-                    Console.WriteLine("Weather condition: Humid");
-                    condition = "humid";
+                    //Console.WriteLine("Weather condition: Humid");
+                    condition = "Humid";
                     break;
             }
             
@@ -72,8 +71,9 @@ namespace Lemonade_Stand
 
         public void ActualWeather()
         {
-            RandomNumber();
-            Console.WriteLine();
+            real = RandomNumber();
+            //Console.WriteLine(real);
+            Console.ReadLine();
         }
 
         public int RandomNumber()
@@ -90,9 +90,11 @@ namespace Lemonade_Stand
             WeatherForecast();
             ActualWeather();
             forecast = condition;
-            temperature = RandomNumber();
+            temperature = real;
             daily = forecast + temperature;
-            Console.WriteLine("Today's weather forecast is" + daily);
+            Console.WriteLine("Today's weather forecast is " + forecast);
+            Console.WriteLine("Today's weather temperature is " + temperature);
+            Console.ReadLine();
             Console.Clear();
         }
 
