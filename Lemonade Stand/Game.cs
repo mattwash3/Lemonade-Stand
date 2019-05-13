@@ -59,8 +59,7 @@ namespace Lemonade_Stand
             StoreRun();
             Inventory();
             DaySetup();
-            //CustomerSetup();
-            //WeatherSetup();
+            WeatherSetup();
             UserInterface();
         }
 
@@ -88,7 +87,6 @@ namespace Lemonade_Stand
             Console.WriteLine("Choose number of days to play (7, 14, 30).");
             int numberOfDays = int.Parse(Console.ReadLine());
             int result = numberOfDays;
-            //int[] numbers = { 7, 14, 30 };
             if (numberOfDays == 7)
             {
                 day = new Day();
@@ -114,8 +112,6 @@ namespace Lemonade_Stand
         }
         public void GameMenuCont()
         {
-            //annotate the $20 starting money in the rules so this method can be deleted. Or just leave it out entirely and still delete this method??
-            PlayerSetup();
             Console.WriteLine("Your mom has given you $20 to start your lemonade stand. At the end of the day she lets you use the freezer to store your ice in so it doesn't melt.");
             Console.ReadLine();
             Console.Clear();
@@ -133,7 +129,6 @@ namespace Lemonade_Stand
         public void Inventory()
         {
             player1.inventory.DisplayInventory();
-            //splayer2.inventory.DisplayInventory();
             Console.WriteLine();
             Console.ReadLine();
         }
@@ -148,7 +143,6 @@ namespace Lemonade_Stand
                 {
                     player1 = new Player();
                     Console.WriteLine("Player 1");
-                    //player2 = new Computer();
                     Console.Clear();
                 }
                 else if (numberOfPlayers == 2)
@@ -190,11 +184,6 @@ namespace Lemonade_Stand
             forecast = Console.ReadLine();
             WeekGenerator();
             Console.WriteLine();
-
-        }
-
-        public void CustomerSetup()
-        {
 
         }
 

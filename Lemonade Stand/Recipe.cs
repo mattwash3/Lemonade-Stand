@@ -45,7 +45,6 @@ namespace Lemonade_Stand
             IceCubes(inventory);
             CupsPerPitcher(inventory);
             PricePerCup(inventory);
-            //RecipeTaste();
         }
 
         public void Lemons(Inventory inventory)
@@ -55,7 +54,6 @@ namespace Lemonade_Stand
             remainingLemons = inventory.totalLemons -= numberLemons;
             Console.WriteLine(inventory.totalLemons);
             Console.WriteLine("Lemons per pitcher " + remainingLemons);
-            //Console.ReadLine();
         }
 
         public void CupsOfSugar(Inventory inventory)
@@ -65,7 +63,6 @@ namespace Lemonade_Stand
             remainingSugar = inventory.totalSugar -= numberCupsSugar;
             Console.WriteLine(inventory.totalSugar);
             Console.WriteLine("Cups of sugar per pitcher " + remainingSugar);
-            //Console.ReadLine();
         }
 
         public void IceCubes(Inventory inventory)
@@ -75,7 +72,6 @@ namespace Lemonade_Stand
             remainingIce = inventory.totalIce -= numberIceCubes;
             Console.WriteLine(inventory.totalIce);
             Console.WriteLine("Ice cubes per pitcher " + remainingIce);
-            //Console.ReadLine();
         }
 
         public void CupsPerPitcher(Inventory inventory)
@@ -85,14 +81,11 @@ namespace Lemonade_Stand
             remainingCups = inventory.totalCups -= numberCups;
             Console.WriteLine(inventory.totalCups); 
             Console.WriteLine("Cups per pitcher " + remainingCups);
-            //Console.ReadLine();
         }
 
         public void PricePerCup(Inventory inventory)
         {
             Console.WriteLine("Enter price per cup ($0.00-1.00)");
-            //cupPrice = int.Parse(Console.ReadLine());
-            //cupPrice = inventory.totalMoney -= costPerCup;
             pricePerCup = inventory.totalMoney + cupPrice;
             Console.WriteLine(pricePerCup);
             Console.WriteLine("Price per cup is " + pricePerCup);          

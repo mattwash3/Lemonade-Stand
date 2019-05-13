@@ -34,7 +34,6 @@ namespace Lemonade_Stand
         public void WeatherForecast()
         {
             int conditions = RandomWeather();
-            //Console.WriteLine(conditions);
             string forecast = Console.ReadLine();
             switch(conditions)
             {
