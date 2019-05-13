@@ -35,6 +35,33 @@ namespace Lemonade_Stand
             Console.ReadLine();
         }
 
+
+        //Single Responsibility SOLID Principle////////
+        public void DayForecast()
+        {
+            weather.WeatherForecast();
+        }
+
+        public void DayTemperature()
+        {
+            weather.ActualWeather();
+        }
+
+
+        //Open/Closed SOLID Principle////////////
+        public void WeekGenerator()
+        {
+            Console.WriteLine();
+            List<string> days = new List<string>();
+            days.Add("Monday");
+            days.Add("Tuesday");
+            days.Add("Wednesday");
+            days.Add("Thursday");
+            days.Add("Friday");
+            days.Add("Saturday");
+            days.Add("Sunday");
+        }
+
         public void GetRecipe(Inventory inventory)
         {
             recipe.RecipeMaker(inventory);
@@ -44,7 +71,8 @@ namespace Lemonade_Stand
 
         public void GetCustomers()
         {
-            customer.
+            weather.RandomNumberCustomers();
+
         }
         
         public void GetTodaysProfit()

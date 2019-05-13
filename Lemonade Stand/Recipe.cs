@@ -18,6 +18,9 @@ namespace Lemonade_Stand
         public double pricePerCup;
         public double costPerCup;
         public double cupPrice;
+        public string normal;
+        public string sweet;
+        public string sour;
 
         //constructor
         public Recipe()
@@ -42,6 +45,7 @@ namespace Lemonade_Stand
             IceCubes(inventory);
             CupsPerPitcher(inventory);
             PricePerCup(inventory);
+            //RecipeTaste();
         }
 
         public void Lemons(Inventory inventory)
@@ -87,7 +91,7 @@ namespace Lemonade_Stand
         public void PricePerCup(Inventory inventory)
         {
             Console.WriteLine("Enter price per cup ($0.00-1.00)");
-            cupPrice = int.Parse(Console.ReadLine());
+            //cupPrice = int.Parse(Console.ReadLine());
             //cupPrice = inventory.totalMoney -= costPerCup;
             pricePerCup = inventory.totalMoney + cupPrice;
             Console.WriteLine(pricePerCup);

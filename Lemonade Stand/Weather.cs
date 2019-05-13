@@ -39,23 +39,18 @@ namespace Lemonade_Stand
             switch(conditions)
             {
                 case 1:
-                    //Console.WriteLine("Weather condition: Hazy");
                     condition = "Hazy";
                     break;
                 case 2:
-                    //Console.WriteLine("Weather condition: Rainy");
                     condition = "Rainy";
                     break;
                 case 3:
-                    //Console.WriteLine("Weather condition: Sunny");
                     condition = "Sunny";
                     break;
                 case 4:
-                    //Console.WriteLine("Weather condition: Overcast");
                     condition = "Overcast";
                     break;
                 case 5:
-                    //Console.WriteLine("Weather condition: Humid");
                     condition = "Humid";
                     break;
             }
@@ -71,8 +66,7 @@ namespace Lemonade_Stand
 
         public void ActualWeather()
         {
-            real = RandomNumber();
-            //Console.WriteLine(real);
+            RandomNumber();
             Console.ReadLine();
         }
 
@@ -81,7 +75,7 @@ namespace Lemonade_Stand
             Console.WriteLine();
             int min = 50;
             int max = 110;
-            Random random = new Random();
+            random = new Random();
             return random.Next(min, max);        
         }
 
@@ -98,7 +92,13 @@ namespace Lemonade_Stand
             Console.Clear();
         }
 
-
-
+        public int RandomNumberCustomers()
+        {
+            Console.WriteLine();
+            int min = 30;
+            int max = 100;
+            random = new Random();
+            return random.Next(min, max);
+        }
     }
 }

@@ -170,11 +170,27 @@ namespace Lemonade_Stand
             Console.ReadLine();
         }
 
+        public void WeekGenerator()
+        {
+            Console.WriteLine();
+            List<string> days = new List<string>();
+            days.Add("Monday");
+            days.Add("Tuesday");
+            days.Add("Wednesday");
+            days.Add("Thursday");
+            days.Add("Friday");
+            days.Add("Saturday");
+            days.Add("Sunday");
+        }
+
         public void WeatherSetup()
         {
             weather.GameWeather();
             Console.WriteLine();
             forecast = Console.ReadLine();
+            WeekGenerator();
+            Console.WriteLine();
+
         }
 
         public void CustomerSetup()
